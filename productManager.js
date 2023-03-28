@@ -1,9 +1,7 @@
-const fs = require("fs").promises;
+import fs from "fs/promises";
 
 class ProductManager {
     #products = [];
-    lastId = 0;
-    path = ``
     
     constructor() {
         this.#products = [];
@@ -11,11 +9,17 @@ class ProductManager {
         this.path = `./product.json`
     }
 
-    async getProducts() {
+    async getProducts(limit) {
         try{
             const productsList = await fs.readFile(this.path, "utf-8");
-    
-            return JSON.parse(productsList);
+
+            if (!limit) {
+                return JSON.parse(productsList);
+            }
+            
+            const products = JSON.parse(productsList)
+            
+            return products.slice( 0, limit )
         } catch {
             await fs.writeFile(this.path, "[]");
 
@@ -128,6 +132,9 @@ class ProductManager {
     }
 }
 
+export default ProductManager
+
+/*
 const productManager = new ProductManager();
 
 // Obtener todos los productos
@@ -139,8 +146,8 @@ const main = async () => {
 
 // Agregar nuevos productos
 const newProduct1 = {
-    title: "producto1",
-    description: "Muy buen producto",
+    title: "remera",
+    description: "remera negra",
     price: 250,
     thumbnail: "Sin imagen",
     code: "1111",
@@ -148,8 +155,8 @@ const newProduct1 = {
 };
 
 const newProduct2 = {
-    title: "producto2",
-    description: "Exelente producto",
+    title: "buzo",
+    description: "buzo negro",
     price: 450,
     thumbnail: "Sin imagen",
     code: "2222",
@@ -189,3 +196,4 @@ const erase = async () => {
 }
 
 //erase()
+*/

@@ -1,0 +1,24 @@
+{
+  "name": "desafio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "campbell_desafio.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/campbell-scott/Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/campbell-scott/Backend/issues"
+  },
+  "homepage": "https://github.com/campbell-scott/Backend#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
