@@ -6,7 +6,7 @@ class ProductManager {
     constructor() {
         this.#products = [];
         this.lastId = 0;
-        this.path = `./product.json`
+        this.path = `./src/product.json`
     }
 
     async getProducts(limit) {
