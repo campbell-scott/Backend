@@ -4,7 +4,7 @@
   "description": "",
   "main": "campbell_desafio.js",
   "scripts": {
-    "start": "nodemon src/app.js"
+    "start": "nodemon"
   },
   "repository": {
     "type": "git",

@@ -6,7 +6,7 @@ class ProductManager {
     constructor() {
         this.#products = [];
         this.lastId = 0;
-        this.path = `./src/product.json`
+        this.path = `./src/db/product.json`
     }
 
     async getProducts(limit) {
@@ -133,67 +133,3 @@ class ProductManager {
 }
 
 export default ProductManager
-
-/*
-const productManager = new ProductManager();
-
-// Obtener todos los productos
-const main = async () => {
-    console.log(await productManager.getProducts())
-}
-
-//main()
-
-// Agregar nuevos productos
-const newProduct1 = {
-    title: "remera",
-    description: "remera negra",
-    price: 250,
-    thumbnail: "Sin imagen",
-    code: "1111",
-    stock: 25,
-};
-
-const newProduct2 = {
-    title: "buzo",
-    description: "buzo negro",
-    price: 450,
-    thumbnail: "Sin imagen",
-    code: "2222",
-    stock: 15,
-};
-
-const generate = async () => {
-    console.log(await productManager.addProduct(newProduct1))
-    console.log(await productManager.addProduct(newProduct2))
-}
-
-//generate()
-
-// Buscar un producto por su id
-const find = async () => {
-    console.log(await productManager.getProductById(1))
-}
-
-//find()
-
-
-// Actualizar un producto
-const actualizoProducto = {
-    title: "productor",
-    stock: 43,
-}
-
-const update = async () => {
-    console.log(await productManager.updateProduct(2,actualizoProducto))
-}
-
-//update()
-
-// Eliminar un producto
-const erase = async () => {
-    console.log(await productManager.deleteProduct(2))
-}
-
-//erase()
-*/
