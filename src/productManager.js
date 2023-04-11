@@ -117,7 +117,7 @@ class ProductManager {
 
             const productIndex = products.findIndex((product) => product.id === id);
             
-            if (!productIndex) {
+            if (productIndex === -1) {
                 throw new Error(`No se encontro ningun producto con el id: ${id}` );
             }
 
